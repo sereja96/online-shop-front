@@ -1,2 +1,21 @@
 @import "second";
+@import "shop";
+@import "category";
+@import "product";
+@import "brand";
 
+.block-header {
+  padding: 5px 25px;
+}
+
+.underline-header {
+  color: #2e2e2e;
+  background: #2e2e2e;
+  margin: 5px 25px;
+  height: 2px;
+  border: 0;
+}
+
+.main-header {
+  text-align: center;
+}

@@ -1,0 +1,16 @@
+
+.category-item {
+  height: 120px;
+  cursor: pointer;
+  max-width: 470px;
+  margin: 10px auto;
+}
+
+.category-item:hover {
+  box-shadow: 0 0 5px grey;
+}
+
+.category-image {
+  width: 120px;
+  height: 120px;
+}

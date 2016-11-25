@@ -26,44 +26,32 @@ var getDataFromRequest = function (url, method, isAuthRequired, data) {
         method: method,
         url: url,
         data: data
-    }).then(function (response) {
-        return response.data;
-    }).catch(function (error) {
-        console.log(error);
     });
 };
 
 export function getData (url, isAuthRequired, data) {
-    return getDataFromRequest(url, 'GET', isAuthRequired, data).then(function (response) {
-        return response;
-    });
+    return getDataFromRequest(url, 'GET', isAuthRequired, data);
 }
 
 export function postData (url, isAuthRequired, data) {
-    return getDataFromRequest(url, 'POST', isAuthRequired, data).then(function (response) {
-        return response;
-    });
+    return getDataFromRequest(url, 'POST', isAuthRequired, data);
 }
 
 export function deleteData (url, isAuthRequired, data) {
-    return getDataFromRequest(url, 'DELETE', isAuthRequired, data).then(function (response) {
-        return response;
-    });
+    return getDataFromRequest(url, 'DELETE', isAuthRequired, data);
 }
 
 export function putData (url, isAuthRequired, data) {
-    return getDataFromRequest(url, 'PUT', isAuthRequired, data).then(function (response) {
-        return response;
-    });
+    return getDataFromRequest(url, 'PUT', isAuthRequired, data);
 }
 
 export function patchData (url, isAuthRequired, data) {
-    return getDataFromRequest(url, 'PATCH', isAuthRequired, data).then(function (response) {
-        return response;
-    });
+    return getDataFromRequest(url, 'PATCH', isAuthRequired, data);
 }
 
 export function isSuccess (response) {
+    response = response.payload.data;
+
     if (typeof response != 'undefined'
         && response
         && response.status == REQUEST_SUCCESS) {
@@ -71,4 +59,20 @@ export function isSuccess (response) {
     }
 
     return false;
+}
+
+export function getDataFromAction (action) {
+    return action
+        && action.payload
+        && action.payload.data
+        && action.payload.data.data
+        || {};
+}
+
+export function getMessageFromAction (action) {
+    return action
+        && action.payload
+        && action.payload.data
+        && action.payload.data.message
+        || true;
 }
