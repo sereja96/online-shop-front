@@ -7,8 +7,8 @@ class BrandsView extends React.Component {
     render () {
         return (
             <Col xs={12} >
-                <h2>Все Бренды</h2>
-                <hr/>
+                <h2 className="block-header">Все Бренды</h2>
+                <hr className="underline-header" />
 
                 <Row>
                     <PopularBrands />

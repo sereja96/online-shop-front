@@ -18,13 +18,14 @@ export default function(state = INITIAL_STATE, action) {
     switch(action.type) {
 
         case BRANDS_REQUEST:
+        case BRAND_REQUEST:
             return {...state, brands: [], error : null, loading: true};
+
         case BRANDS_SUCCESS:
             return {...state, brands: getDataFromAction(action), error: null, loading: false };
         case BRANDS_ERROR:
             return {...state, brands: [], error: getMessageFromAction(action), loading: false};
 
-        case BRAND_REQUEST:
             return {...state, brand: {}, error: null, loading: true};
         case BRAND_SUCCESS:
             return {...state, brand: getDataFromAction(action), error: null, loading: false};

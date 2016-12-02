@@ -10,8 +10,8 @@ export function login ({ login, password }) {
 
     loginUserRequest();
     postData('/login', false, data).then(function (response) {
-        if (isSuccess(response)) {
-            loginUserSuccess(response.data);
+        if (response.data.status == 'success') {
+            loginUserSuccess(response.data.data);
             location.reload();
         } else {
             loginUserFailure();

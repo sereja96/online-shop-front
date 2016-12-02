@@ -6,7 +6,27 @@
   margin: 10px auto;
 }
 
+.basket-item:hover,
 .product-item:hover {
   box-shadow: 0 0 5px grey;
 }
 
+.basket-item {
+  height: 120px;
+  margin: 10px auto;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.basket-item > div {
+  height: 120px;
+  vertical-align: middle;
+}
+
+input.product-count {
+  width: 70px;
+  height: 40px;
+  font-size: 28px;
+  border-radius: 5px;
+  margin: 40px auto;
+}
