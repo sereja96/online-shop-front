@@ -4,6 +4,17 @@ import PopularBrands from '../containers/brand/PopularBrands';
 
 class BrandsView extends React.Component {
 
+    constructor (props) {
+        super(props);
+        this.state = {
+            search: ''
+        };
+    }
+
+    handleSearch (e) {
+        this.setState({search: e.target.value});
+    }
+
     render () {
         return (
             <Col xs={12} >
@@ -11,7 +22,16 @@ class BrandsView extends React.Component {
                 <hr className="underline-header" />
 
                 <Row>
-                    <PopularBrands />
+                    <Col xs={10} xsOffset={1}>
+                        <input className="form-control"
+                               type="text"
+                               placeholder="Поиск..."
+                               onChange={this.handleSearch.bind(this)} />
+                    </Col>
+                </Row>
+                <hr className="underline-header" />
+                <Row>
+                    <PopularBrands search={this.state.search} />
                 </Row>
             </Col>
         );

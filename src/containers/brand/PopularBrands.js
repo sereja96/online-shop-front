@@ -9,7 +9,8 @@ import { fetchPopularBrands,
 function mapStateToProps(globalState, ownProps) {
     return {
         loadedBrands: globalState.brand,
-        count: ownProps.count || 0
+        count: ownProps.count || 0,
+        search: ownProps.search || null
     };
 }
 

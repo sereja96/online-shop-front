@@ -8,7 +8,8 @@ import { fetchPopularShops,
 function mapStateToProps(globalState, ownProps) {
     return {
         loadedShops: globalState.shop,
-        count: ownProps.count || 0
+        count: ownProps.count || 0,
+        search: ownProps.search || null
     };
 }
 

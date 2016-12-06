@@ -18,13 +18,21 @@ class Categories extends React.Component {
     }
 
     render () {
-        const { categories, loading, error } = this.props.loadedCategories;
+        var { categories, loading, error } = this.props.loadedCategories;
 
         var display = '';
         if (loading) {
             display = <NoContent message={'Список категорий загружается...'} />;
         } else {
             if (categories.length) {
+
+                const searchString = this.props.search;
+                if (typeof searchString != 'undefined' && searchString && searchString.length) {
+                    categories = categories.filter(function (category) {
+                        return category.name.toLowerCase().match(searchString);
+                    });
+                }
+
                 display = categories.map(function (value, key) {
                     return <Col key={value.id} md={4} xs={6} >
                         <Category category={value} />

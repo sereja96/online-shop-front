@@ -16,6 +16,7 @@ import BrandView from './views/BrandView';
 import FullProductView from './views/ProductView';
 import BasketView from './views/BasketView';
 import OrdersView from './views/OrdersView';
+import MakeOrderView from './views/MakeOrderView';
 
 export default (
     <Route path="/" component={App}>
@@ -32,6 +33,7 @@ export default (
         <Route path="product/:id" component={FullProductView} onEnter={requireAuth} />
         <Route path="basket" component={BasketView} onEnter={requireAuth} />
         <Route path="orders" component={OrdersView} onEnter={requireAuth} />
+        <Route path="order" component={MakeOrderView} onEnter={requireAuth} />
 
         <Route path="*" component={NotFoundView} />
     </Route>

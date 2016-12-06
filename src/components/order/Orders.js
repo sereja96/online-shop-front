@@ -4,6 +4,12 @@ import NoContent from '../../containers/NoContent';
 
 class Orders extends React.Component {
 
+    constructor(props) {
+        super(props);
+
+        this.props.loadOrders();
+    }
+
     render () {
         const { orders, error, loading } = this.props.loadedOrders;
 
@@ -15,7 +21,7 @@ class Orders extends React.Component {
         }
 
         return (
-            data
+            <div>{data}</div>
         );
     }
 

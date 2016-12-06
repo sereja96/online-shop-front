@@ -4,14 +4,33 @@ import PopularShops from '../containers/shop/PopularShops';
 
 class ShopsView extends React.Component {
 
+    constructor (props) {
+        super(props);
+        this.state = {
+            search: ''
+        };
+    }
+
+    handleSearch (e) {
+        this.setState({search: e.target.value});
+    }
+
     render () {
         return (
             <Col xs={12} >
                 <h2>Все Торговые Магазины</h2>
-                <hr/>
-
+                <hr className="underline-header" />
                 <Row>
-                    <PopularShops />
+                    <Col xs={10} xsOffset={1}>
+                        <input className="form-control"
+                               type="text"
+                               placeholder="Поиск..."
+                               onChange={this.handleSearch.bind(this)} />
+                    </Col>
+                </Row>
+                <hr className="underline-header" />
+                <Row>
+                    <PopularShops search={this.state.search} />
                 </Row>
             </Col>
         );

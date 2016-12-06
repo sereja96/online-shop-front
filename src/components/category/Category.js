@@ -11,24 +11,24 @@ class Category extends React.Component {
 
     render () {
         return (
-            <Link to={ '/category/' + this.props.category.id } >
-                <div className="shop-item" >
-                    <Col md={5} ><CategoryImage src={null} /></Col>
-                    <Col md={7} >
-                        <Row>
+            <div className="shop-item" >
+                <Col md={5} ><CategoryImage src={null} /></Col>
+                <Col md={7} >
+                    <Row>
+                        <Link to={ '/category/' + this.props.category.id } >
                             <h4>{this.props.category.name}</h4>
-                        </Row>
-                        <Row>
-                            <p>
-                                {
-                                    'Товаров: ' +
-                                    (this.props.category.product_count && this.props.category.product_count.count || 0)
-                                }
-                            </p>
-                        </Row>
-                    </Col>
-                </div>
-            </Link>
+                        </Link>
+                    </Row>
+                    <Row>
+                        <p>
+                            {
+                                'Товаров: ' +
+                                (this.props.category.product_count && this.props.category.product_count.count || 0)
+                            }
+                        </p>
+                    </Row>
+                </Col>
+            </div>
         );
     }
 

@@ -12,7 +12,7 @@ function mapStateToProps(globalState, ownProps) {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getOrders: () => {
+        loadOrders: () => {
             dispatch(getOrders()).then((response) => {
                 isSuccess(response)
                     ? dispatch(getOrdersSuccess(response))

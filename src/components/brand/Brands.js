@@ -18,13 +18,21 @@ class Brands extends React.Component {
     }
 
     render () {
-        const { brands, loading, error } = this.props.loadedBrands;
+        var { brands, loading, error } = this.props.loadedBrands;
 
         var display = '';
         if (loading) {
             display = <NoContent message={'Список брендов загружается...'} />;
         } else {
             if (brands && brands.length) {
+
+                const searchString = this.props.search;
+                if (typeof searchString != 'undefined' && searchString && searchString.length > 0) {
+                    brands = brands.filter(function (brand) {
+                        return brand.name.toLocaleLowerCase().match(searchString);
+                    });
+                }
+
                 display = brands.map(function (value, key) {
                     return <Col key={value.id} md={4} xs={6} >
                         <Brand brand={value} />

@@ -9,7 +9,8 @@ import { fetchPopularCategories,
 function mapStateToProps(globalState, ownProps) {
     return {
         loadedCategories: globalState.category,
-        count: ownProps.count || 0
+        count: ownProps.count || 0,
+        search: ownProps.search || null
     };
 }
 

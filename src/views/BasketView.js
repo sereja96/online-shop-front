@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Row, Button } from 'react-bootstrap';
+import { Link } from 'react-router';
 import Basket from '../containers/basket/Basket';
 
 class BasketView extends React.Component {
@@ -15,7 +16,9 @@ class BasketView extends React.Component {
 
                 <Row>
                     <Col xs={4} xsOffset={4} >
-                        <Button style={ {width: '100%'} } bsSize="lg" bsStyle="primary" >Оформить Заказ</Button>
+                        <Link to="order">
+                            <Button style={ {width: '100%'} } bsSize="lg" bsStyle="primary" >Оформить Заказ</Button>
+                        </Link>
                     </Col>
                 </Row>
             </Col>

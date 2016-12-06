@@ -17,13 +17,21 @@ class Shops extends React.Component {
     }
 
     render () {
-        const { shops, loading, error } = this.props.loadedShops;
+        var { shops, loading, error } = this.props.loadedShops;
 
         var shopsDisplay = '';
         if (loading) {
             shopsDisplay = <h3>Список магазинов загружается...</h3>
         } else {
             if (shops.length) {
+
+                const searchString = this.props.search;
+                if (typeof searchString != 'undefined' && searchString && searchString.length > 0) {
+                    shops = shops.filter(function (shop) {
+                        return shop.name.toLowerCase().match(searchString);
+                    });
+                }
+
                 shopsDisplay = shops.map(function (value, key) {
                     return <Col key={value.id} md={4} xs={6} >
                         <Shop shop={value} />

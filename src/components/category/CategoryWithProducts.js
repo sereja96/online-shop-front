@@ -13,7 +13,6 @@ class ShopWithProducts extends React.Component {
 
     render () {
         const { category, error, loading } = this.props.loadedCategory;
-        console.log(this.props.loadedCategory);
 
         var data = '';
         if (loading) {

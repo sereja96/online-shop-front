@@ -15,7 +15,7 @@ class ProductItem extends React.Component {
     }
 
     deleteProduct () {
-        this.props.removeProduct(this.props.basket.id);
+        this.props.removeProduct(this.props.basket.product.id);
     }
 
     handleCountChange (e) {
@@ -60,7 +60,7 @@ class ProductItem extends React.Component {
                 <Col md={2}>
                     <Button style={ {margin: '45px auto'} }
                             bsStyle="danger"
-                            bsSize="md"
+                            bsSize="sm"
                             onClick={this.deleteProduct.bind(this)}>Удалить</Button>
                 </Col>
             </div>

@@ -6,11 +6,13 @@
   margin: 10px auto;
 }
 
+.order-item:hover,
 .basket-item:hover,
 .product-item:hover {
   box-shadow: 0 0 5px grey;
 }
 
+.order-item,
 .basket-item {
   height: 120px;
   margin: 10px auto;
