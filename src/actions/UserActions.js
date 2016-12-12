@@ -29,7 +29,7 @@ export function loginUserRequest() {
 
 export function loginUserSuccess({ token, user }) {
     localStorage.setItem('token', token);
-    localStorage.setItem('currentUser', user);
+    localStorage.setItem('currentUser', JSON.stringify(user));
 
     return {
         type: LOGIN_USER_SUCCESS

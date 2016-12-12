@@ -13,7 +13,11 @@ class Shops extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getPopularShops(this.props.count);
+        if (this.props.myOnly) {
+            this.props.getMyShops(this.props.count);
+        } else {
+            this.props.getPopularShops(this.props.count);
+        }
     }
 
     render () {
@@ -32,9 +36,10 @@ class Shops extends React.Component {
                     });
                 }
 
+                const isMy = this.props.myOnly;
                 shopsDisplay = shops.map(function (value, key) {
                     return <Col key={value.id} md={4} xs={6} >
-                        <Shop shop={value} />
+                        <Shop myOnly={isMy} shop={value} />
                     </Col>
                 });
             } else {

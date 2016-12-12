@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router';
 import PopularShops from '../containers/shop/PopularShops';
 
 class ShopsView extends React.Component {
@@ -18,7 +19,7 @@ class ShopsView extends React.Component {
     render () {
         return (
             <Col xs={12} >
-                <h2>Все Торговые Магазины</h2>
+                <h2>Все Торговые Магазины <Link to="/shops/my">Мои Магазины</Link></h2>
                 <hr className="underline-header" />
                 <Row>
                     <Col xs={10} xsOffset={1}>

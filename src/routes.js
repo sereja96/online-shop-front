@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
-import { requireAuth, requireNonAuth } from './components/AuthenticatedComponent';
+import { requireAuth, requireNonAuth, requireAdminAuth } from './components/AuthenticatedComponent';
 
 import App from './containers/App';
 import HomeView from './views/HomeView';
@@ -17,6 +17,9 @@ import FullProductView from './views/ProductView';
 import BasketView from './views/BasketView';
 import OrdersView from './views/OrdersView';
 import MakeOrderView from './views/MakeOrderView';
+import MyShopsView from './views/MyShopsView';
+import Forbidden from './views/ForbiddenView';
+import AdminReports from './views/AdminReportView';
 
 export default (
     <Route path="/" component={App}>
@@ -27,6 +30,7 @@ export default (
         <Route path="categories" component={CategoriesView} />
         <Route path="category/:id" component={CategoryView} />
         <Route path="shops" component={ShopsView} />
+        <Route path="shops/my" component={MyShopsView} onEnter={requireAuth} />
         <Route path="shop/:id" component={ShopView} />
         <Route path="brands" component={BrandsView} />
         <Route path="brand/:id" component={BrandView} />
@@ -35,6 +39,9 @@ export default (
         <Route path="orders" component={OrdersView} onEnter={requireAuth} />
         <Route path="order" component={MakeOrderView} onEnter={requireAuth} />
 
+        <Route path="reports" component={AdminReports} onEnter={requireAdminAuth} />
+
+        <Route path="forbidden" component={Forbidden} onEnter={requireAuth} />
         <Route path="*" component={NotFoundView} />
     </Route>
 );

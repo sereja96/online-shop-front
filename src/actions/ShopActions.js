@@ -19,6 +19,15 @@ export function fetchPopularShops(count) {
     };
 }
 
+export function fetchMyShops (count) {
+    const request = getData(['/shops/my', count].join('/'), true);
+
+    return {
+        type: POPULAR_SHOPS_REQUEST,
+        payload: request
+    }
+}
+
 export function fetchPopularShopsError(response) {
     return {
         type: POPULAR_SHOPS_ERROR,
