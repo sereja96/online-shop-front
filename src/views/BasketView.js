@@ -1,9 +1,22 @@
 import React from 'react';
-import { Col, Row, Button } from 'react-bootstrap';
+import { Col, Row, Button, Form, FormControl } from 'react-bootstrap';
 import { Link } from 'react-router';
 import Basket from '../containers/basket/Basket';
+import MakeOrder from '../containers/order/MakeOrder';
 
 class BasketView extends React.Component {
+
+    constructor (props) {
+        super(props);
+
+        this.state = {
+            showOrderForm: false
+        };
+    }
+
+    showOrderForm () {
+        this.setState({showOrderForm: true});
+    }
 
     render () {
         return (
@@ -14,11 +27,16 @@ class BasketView extends React.Component {
                     <Basket />
                 </Row>
 
-                <Row>
+                <Row style={ {display: this.state.showOrderForm ? '' : 'none'} } >
+                    <MakeOrder />
+                </Row>
+
+                <Row style={ {display: !this.state.showOrderForm ? '' : 'none'} }>
                     <Col xs={4} xsOffset={4} >
-                        <Link to="order">
-                            <Button style={ {width: '100%'} } bsSize="lg" bsStyle="primary" >Оформить Заказ</Button>
-                        </Link>
+                        <Button onClick={this.showOrderForm.bind(this)}
+                                style={ {width: '100%'} }
+                                bsSize="lg"
+                                bsStyle="primary">Оформить Заказ</Button>
                     </Col>
                 </Row>
             </Col>

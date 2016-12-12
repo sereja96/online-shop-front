@@ -11,8 +11,7 @@ class Discount extends React.Component {
 
         return (
             <div>
-                <div>Скидка</div>
-                <div className="discount">{discountString}</div>
+                {discountString}
             </div>
         );
     }

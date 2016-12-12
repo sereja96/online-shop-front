@@ -4,7 +4,7 @@ class MakeOrderView extends React.Component {
 
     render () {
         return (
-            <div>Оформление Заказа!</div>
+            <div>Success!!</div>
         );
     }
 

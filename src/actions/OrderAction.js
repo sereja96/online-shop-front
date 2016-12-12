@@ -1,5 +1,10 @@
-import { getData } from './RequestAction';
-import { ORDERS_ERROR, ORDERS_REQUEST, ORDERS_SUCCESS } from '../constants/OrderConstants';
+import { getData, postData } from './RequestAction';
+import { ORDERS_ERROR,
+    ORDERS_REQUEST,
+    ORDERS_SUCCESS,
+    ORDER_CONFIRM_ERROR,
+    ORDER_CONFIRM_REQUEST,
+    ORDER_CONFIRM_SUCCESS } from '../constants/OrderConstants';
 
 export function getOrders () {
     const request = getData('/orders', true);
@@ -20,6 +25,30 @@ export function getOrdersSuccess (response) {
 export function getOrdersError (response) {
     return {
         type: ORDERS_ERROR,
+        payload: response.payload
+    }
+}
+
+
+export function confirmOrder (data) {
+    const request = postData('/order', true, data);
+
+    return {
+        type: ORDER_CONFIRM_REQUEST,
+        payload: request
+    }
+}
+
+export function confirmOrderSuccess (response) {
+    return {
+        type: ORDER_CONFIRM_SUCCESS,
+        payload: response.payload
+    }
+}
+
+export function confirmOrderError (response) {
+    return {
+        type: ORDER_CONFIRM_ERROR,
         payload: response.payload
     }
 }

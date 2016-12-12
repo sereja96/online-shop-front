@@ -37,8 +37,8 @@ class Basket extends React.Component {
         return (
             <div>
                 {data}
-                <Col md={8}><h1>Общая Стоимость:</h1></Col>
-                <Col md={4}><h1>${total}</h1></Col>
+                <Col md={8}><h2>Общая Стоимость:</h2></Col>
+                <Col md={4}><h2>${total}</h2></Col>
             </div>
         );
     }
