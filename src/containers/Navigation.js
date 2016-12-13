@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { isAuth } from '../components/AuthenticatedComponent';
+import { isAuth, isAdmin } from '../components/AuthenticatedComponent';
 import { logoutAndRedirect } from '../actions/UserActions';
 
 class Navigation extends React.Component {
@@ -14,6 +14,7 @@ class Navigation extends React.Component {
                     </div>
                     <div id="navbar">
                         <ul className="nav navbar-nav navbar-right">
+                            {isAdmin() ? <li><Link to="/reports">Отчеты</Link></li> : null}
                             <li><Link to="/shops">Поиск Магазинов</Link></li>
                             <li><Link to="/categories">Поиск Категорий</Link></li>
                             <li><Link to="/brands">Поиск Брендов</Link></li>
