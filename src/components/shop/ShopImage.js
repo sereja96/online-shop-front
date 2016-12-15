@@ -10,7 +10,7 @@ class ShopImage extends React.Component {
     render () {
         return (
             <img className="shop-image"
-                 src={ API_LINK + '/disk/images/' + ((this.props.src && this.props.src.link) || 'default-shop.png') } />
+                 src={ ((this.props.src && this.props.src.link) || (API_LINK + '/disk/images/' +'default-shop.png')) } />
         );
     }
 

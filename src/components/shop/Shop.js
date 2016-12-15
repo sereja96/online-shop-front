@@ -20,9 +20,6 @@ class Shop extends React.Component {
                         </Link>
                     </Row>
                     <Row>
-                        <p>{this.props.shop.description}</p>
-                    </Row>
-                    <Row>
                         <p>{'Рейтинг: ' + this.props.shop.rate + ' из 5' }</p>
                     </Row>
                     <Row>

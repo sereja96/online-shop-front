@@ -12,7 +12,7 @@ class Brand extends React.Component {
     render () {
         return (
             <div className="brand-item">
-                <Col md={5} ><BrandImage src={null} /></Col>
+                <Col md={5} ><BrandImage src={this.props.brand.image} /></Col>
                 <Col md={7} >
                     <Row>
                         <Link to={ '/brand/' + this.props.brand.id } >

@@ -31,7 +31,11 @@ class Order extends React.Component {
 
         this.state.totalCost = cost;
 
-        if (discount && discount.discount && discount.type && cost > 0) {
+        if (discount
+            && discount.discount
+            && discount.type
+            && cost > 0) {
+
             if (discount.type == 'percent'
                 && discount.discount > 0
                 && discount.discount <= 100) {

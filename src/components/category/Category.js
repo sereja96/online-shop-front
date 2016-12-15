@@ -12,7 +12,7 @@ class Category extends React.Component {
     render () {
         return (
             <div className="shop-item" >
-                <Col md={5} ><CategoryImage src={null} /></Col>
+                <Col md={5} ><CategoryImage src={this.props.category.image} /></Col>
                 <Col md={7} >
                     <Row>
                         <Link to={ '/category/' + this.props.category.id } >

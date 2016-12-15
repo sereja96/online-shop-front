@@ -20,12 +20,14 @@ import MakeOrderView from './views/MakeOrderView';
 import MyShopsView from './views/MyShopsView';
 import Forbidden from './views/ForbiddenView';
 import AdminReports from './views/AdminReportView';
+import RegView from './views/RegView';
 
 export default (
     <Route path="/" component={App}>
         <IndexRoute component={HomeView}/>
 
         <Route path="login" component={LoginView} onEnter={requireNonAuth} />
+        <Route path="reg" component={RegView} onEnter={requireNonAuth} />
         <Route path="protected" component={ProtectedView} onEnter={requireAuth} />
         <Route path="categories" component={CategoriesView} />
         <Route path="category/:id" component={CategoryView} />

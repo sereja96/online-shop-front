@@ -10,7 +10,7 @@ class CategoryImage extends React.Component {
     render () {
         return (
             <img className="category-image"
-                 src={ API_LINK + '/disk/images/' + ((this.props.src && this.props.src.link) || 'default-category.png') } />
+                 src={ ((this.props.src && this.props.src.link) || (API_LINK + '/disk/images/' +'default-category.png')) } />
         );
     }
 

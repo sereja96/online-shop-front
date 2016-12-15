@@ -16,19 +16,19 @@ class HomeView extends React.Component {
                 <Row>
                     <h3 className="block-header" >Популярные Магазины <Link to="/shops" >Все Магазины</Link></h3>
                     <hr className="underline-header" />
-                    <PopularShops count={6} />
+                    <PopularShops count={3} />
                 </Row>
 
                 <Row>
                     <h3 className="block-header" >Популярные Категории <Link to="/categories" >Все Категории</Link></h3>
                     <hr className="underline-header" />
-                    <PopularCategories count={6} />
+                    <PopularCategories count={3} />
                 </Row>
 
                 <Row>
                     <h3 className="block-header" >Популярные Бренды <Link to="/brands" >Все Бренды</Link></h3>
                     <hr className="underline-header" />
-                    <PopularBrands count={6} />
+                    <PopularBrands count={3} />
                 </Row>
 
             </Col>

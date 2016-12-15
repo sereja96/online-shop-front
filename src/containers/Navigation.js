@@ -20,6 +20,7 @@ class Navigation extends React.Component {
                             <li><Link to="/brands">Поиск Брендов</Link></li>
                             {isAuth() ? <li><Link to="/orders">Мои Заказы</Link></li> : null}
                             {isAuth() ? <li><Link to="/basket">Корзина</Link></li> : null}
+                            {!isAuth() ? <li><Link to="/reg">Регистрация</Link></li> : null}
                             {
                                 isAuth()
                                     ? <li onClick={logoutAndRedirect}><Link>Выход</Link></li>
